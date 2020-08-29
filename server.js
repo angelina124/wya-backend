@@ -5,7 +5,7 @@ require('dotenv').config()
 
 // set up cors to allow cross-origin requests
 const cors = require('cors')
-mongoose.connect(process.env.MONGODB_URI || 'mongodb+srv://angie:IMQXSMGsjb4KiYEs@cluster0.zn2de.mongodb.net/wya?retryWrites=true&w=majority');
+mongoose.connect(process.env.MONGODB_URI);
 
 // Initialize http server
 const app = express()
