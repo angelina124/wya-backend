@@ -80,6 +80,10 @@ router.route('/crowds/:id')
     const { startTimestamp, stopTimeStamp } = req.body
     const { id } = req.params
 
+    if (!startTimestamp || !stopTimeStamp || !id) {
+      return res.status(400).json({ error: "Missing fields in request" })
+    }
+
     Location.findById(id, (error, location) => {
       if (!!error) {
         return res.status(500).json({ error })
